@@ -37,7 +37,7 @@
             this.txtBico = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxNPreco = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -127,21 +127,21 @@
             this.cbxNPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNPreco.FormattingEnabled = true;
             this.cbxNPreco.Items.AddRange(new object[] {
-            "0",
-            "1"});
+            "00",
+            "01"});
             this.cbxNPreco.Location = new System.Drawing.Point(250, 156);
             this.cbxNPreco.Name = "cbxNPreco";
-            this.cbxNPreco.Size = new System.Drawing.Size(43, 33);
+            this.cbxNPreco.Size = new System.Drawing.Size(58, 33);
             this.cbxNPreco.TabIndex = 8;
-            this.cbxNPreco.Text = "0";
+            this.cbxNPreco.Text = "00";
             // 
-            // textBox1
+            // txtPreco
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(29, 256);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 31);
-            this.textBox1.TabIndex = 10;
+            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreco.Location = new System.Drawing.Point(29, 256);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(87, 31);
+            this.txtPreco.TabIndex = 10;
             // 
             // label5
             // 
@@ -158,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbxNPreco);
             this.Controls.Add(this.label4);
@@ -169,6 +169,7 @@
             this.Controls.Add(this.txtServidor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConectar);
+            this.MinimizeBox = false;
             this.Name = "AppSoket";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -187,7 +188,7 @@
         private System.Windows.Forms.TextBox txtBico;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxNPreco;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label5;
     }
 }
