@@ -40,6 +40,7 @@
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gpbTrocaPreco = new System.Windows.Forms.RadioButton();
+            this.txt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnConectar
@@ -168,11 +169,20 @@
             this.gpbTrocaPreco.Text = "Troca de Preço";
             this.gpbTrocaPreco.UseVisualStyleBackColor = true;
             // 
+            // txt
+            // 
+            this.txt.Location = new System.Drawing.Point(539, 24);
+            this.txt.Multiline = true;
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(439, 490);
+            this.txt.TabIndex = 12;
+            // 
             // AppSoket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 544);
+            this.ClientSize = new System.Drawing.Size(1010, 544);
+            this.Controls.Add(this.txt);
             this.Controls.Add(this.gpbTrocaPreco);
             this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.label5);
@@ -207,6 +217,7 @@
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton gpbTrocaPreco;
+        private System.Windows.Forms.TextBox txt;
     }
 }
 

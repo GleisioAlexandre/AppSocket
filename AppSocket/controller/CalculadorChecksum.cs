@@ -30,7 +30,7 @@ namespace AppSocket.controller
 
             return hexChecksum;
 
-            Console.WriteLine(hexChecksum);
+
         }
         
     }

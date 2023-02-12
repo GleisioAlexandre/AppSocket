@@ -32,28 +32,18 @@ namespace AppSocket
             CalculadorChecksum calculadorChecksum = new CalculadorChecksum();
             string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), txtPreco.Text);
             Console.WriteLine(checksum);
-               try {
-                    string hostName = txtServidor.Text;
-                    // IPAddress ip = IPAddress.Parse("127.0.0.1");
-                    int porta = int.Parse(cbxPorta.SelectedItem.ToString());
+            try
+            {
 
-                    TcpClient cliente = new TcpClient();
-
-                    cliente.Connect(hostName, porta);
-
-                    NetworkStream stream = cliente.GetStream();
-
-                    byte[] menssagem = System.Text.Encoding.UTF8.GetBytes("(&U" + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum.ToUpper() + ")");
-
-                    stream.Write(menssagem, 0, menssagem.Length);
-
-                    stream.Close();
-                    cliente.Close();
-                    Console.ReadLine();
-                }
-                catch (Exception ex) {
-                    MessageBox.Show("Erro ao conectar o servidor!\n" + ex, "Erro",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                ClassSocket sckt = new ClassSocket();
+                string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum + ")";
+                Console.WriteLine(dataIn);
+                sckt.TrocaDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar o servidor!\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
