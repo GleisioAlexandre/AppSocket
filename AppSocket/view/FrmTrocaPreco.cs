@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppSocket.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,16 +25,13 @@ namespace AppSocket
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
-
-            string entradaDeDados = "&U" + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text;
-            byte[] data = Encoding.UTF8.GetBytes(entradaDeDados);
-
-            int checksum = 0;
-            foreach (byte b in data)
-            {
-                checksum = (checksum + b) % 256;
+            string cabecalho = null;
+            if (gpbTrocaPreco.Checked) {
+                 cabecalho = "&U";
             }
-
+            CalculadorChecksum calculadorChecksum = new CalculadorChecksum();
+            string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), txtPreco.Text);
+            Console.WriteLine(checksum);
                try {
                     string hostName = txtServidor.Text;
                     // IPAddress ip = IPAddress.Parse("127.0.0.1");
@@ -45,13 +43,12 @@ namespace AppSocket
 
                     NetworkStream stream = cliente.GetStream();
 
-                    byte[] menssagem = System.Text.Encoding.UTF8.GetBytes("(&U" + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum.ToString("x2").ToUpper() + ")");
+                    byte[] menssagem = System.Text.Encoding.UTF8.GetBytes("(&U" + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum.ToUpper() + ")");
 
                     stream.Write(menssagem, 0, menssagem.Length);
 
                     stream.Close();
                     cliente.Close();
-                    Console.WriteLine(menssagem);
                     Console.ReadLine();
                 }
                 catch (Exception ex) {
