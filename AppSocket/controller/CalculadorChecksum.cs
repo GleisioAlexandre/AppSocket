@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppSocket.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,12 @@ namespace AppSocket.controller
     class CalculadorChecksum
     {
         public string calcular(string cabecalho, string codigoBico, string nivelDePreco, string preco) {
+
+            ClassChecksum cks = new ClassChecksum(cabecalho, codigoBico, nivelDePreco, preco);
+            
+            
             //String de entrada
-            string entradaDeDadoa = cabecalho + codigoBico + nivelDePreco + preco;
+            string entradaDeDadoa = cks.Cabecalho + cks.CodigoBico + cks.NivelPreco + cks.Preco;
 
             //Codificação da string de entrada
             byte[] data = Encoding.UTF8.GetBytes(entradaDeDadoa);

@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\CalculadorChecksum.cs" />
-    <Compile Include="controller\ClassSocket.cs" />
+    <Compile Include="controller\TrocaDePreco.cs" />
+    <Compile Include="model\ClassChecksum.cs" />
+    <Compile Include="model\ClassSocket.cs" />
     <Compile Include="view\FrmTrocaPreco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +83,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,13 +31,11 @@ namespace AppSocket
             }
             CalculadorChecksum calculadorChecksum = new CalculadorChecksum();
             string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), txtPreco.Text);
-            Console.WriteLine(checksum);
             try
             {
 
-                ClassSocket sckt = new ClassSocket();
+                TrocaDePreco sckt = new TrocaDePreco();
                 string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum + ")";
-                Console.WriteLine(dataIn);
                 sckt.TrocaDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
             }
             catch (Exception ex)
