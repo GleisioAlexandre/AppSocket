@@ -36,7 +36,7 @@ namespace AppSocket
 
                 TrocaDePreco sckt = new TrocaDePreco();
                 string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum + ")";
-                sckt.TrocaDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
+                sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
             }
             catch (Exception ex)
             {

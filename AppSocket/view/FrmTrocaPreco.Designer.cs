@@ -171,7 +171,7 @@
             // 
             // txt
             // 
-            this.txt.Location = new System.Drawing.Point(539, 24);
+            this.txt.Location = new System.Drawing.Point(535, 24);
             this.txt.Multiline = true;
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(439, 490);
@@ -197,7 +197,7 @@
             this.Controls.Add(this.btnConectar);
             this.MinimizeBox = false;
             this.Name = "AppSoket";
-            this.Text = "Form1";
+            this.Text = "Troca de Prço";
             this.ResumeLayout(false);
             this.PerformLayout();
 

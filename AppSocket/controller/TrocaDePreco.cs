@@ -9,7 +9,7 @@ namespace AppSocket.controller
 {
     class TrocaDePreco
     {
-        public void TrocaDePreco(string namehost, int port, string dataIn){
+        public void AlteraDePreco(string namehost, int port, string dataIn){
 
             try
             {
