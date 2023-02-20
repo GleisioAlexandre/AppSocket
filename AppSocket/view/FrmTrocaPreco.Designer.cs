@@ -85,6 +85,7 @@
             // 
             // cbxPorta
             // 
+            this.cbxPorta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPorta.FormattingEnabled = true;
             this.cbxPorta.Items.AddRange(new object[] {
@@ -95,7 +96,6 @@
             this.cbxPorta.Name = "cbxPorta";
             this.cbxPorta.Size = new System.Drawing.Size(121, 33);
             this.cbxPorta.TabIndex = 4;
-            this.cbxPorta.Text = "2001";
             // 
             // label3
             // 
@@ -110,7 +110,8 @@
             // txtBico
             // 
             this.txtBico.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBico.Location = new System.Drawing.Point(35, 285);
+            this.txtBico.Location = new System.Drawing.Point(37, 283);
+            this.txtBico.MaxLength = 2;
             this.txtBico.Name = "txtBico";
             this.txtBico.Size = new System.Drawing.Size(61, 31);
             this.txtBico.TabIndex = 6;
@@ -127,6 +128,7 @@
             // 
             // cbxNPreco
             // 
+            this.cbxNPreco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNPreco.FormattingEnabled = true;
             this.cbxNPreco.Items.AddRange(new object[] {
@@ -136,7 +138,6 @@
             this.cbxNPreco.Name = "cbxNPreco";
             this.cbxNPreco.Size = new System.Drawing.Size(58, 33);
             this.cbxNPreco.TabIndex = 8;
-            this.cbxNPreco.Text = "00";
             // 
             // txtPreco
             // 
@@ -171,9 +172,12 @@
             // 
             // txtResposta
             // 
+            this.txtResposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResposta.Location = new System.Drawing.Point(535, 24);
             this.txtResposta.Multiline = true;
             this.txtResposta.Name = "txtResposta";
+            this.txtResposta.ReadOnly = true;
+            this.txtResposta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResposta.Size = new System.Drawing.Size(439, 490);
             this.txtResposta.TabIndex = 12;
             // 

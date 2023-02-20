@@ -11,6 +11,7 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,7 +33,7 @@ namespace AppSocket
             }
             // Pegas as informações e cria o checksum
             CalculadorChecksum calculadorChecksum = new CalculadorChecksum();
-            string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), txtPreco.Text);
+            string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), int.Parse(txtPreco.Text).ToString());
 
             //Envia as infomrções ao servidor junto com checksumn
             try
@@ -42,12 +43,11 @@ namespace AppSocket
                 string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum + ")";
                 sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
 
-                //txtResposta.Text = sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
-
+                
                 string str = sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
 
                 txtResposta.AppendText("Preço do Bico: " + str.Substring(2, str.Length - 3) + ", alterado com sucesso!\r\n");
-               
+
             }
             catch (Exception ex)
             {
@@ -55,7 +55,14 @@ namespace AppSocket
             }
         }
 
+        private void txtBico_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
+        }
 
+        private void txtBico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
