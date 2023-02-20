@@ -9,28 +9,37 @@ namespace AppSocket.controller
 {
     class TrocaDePreco
     {
-        public void AlteraDePreco(string namehost, int port, string dataIn){
+        public string AlteraDePreco(string namehost, int port, string dataIn)
+        {
 
-            try
-            {
-                TcpClient client = new TcpClient();
+            //Socket Cliente
+            TcpClient client = new TcpClient();
 
-                client.Connect(namehost, port);
+            //Conexao do socket cliente com o servidor
+            client.Connect(namehost, port);
 
-                NetworkStream stream = client.GetStream();
+            //Obtem o fluxo de rede do socket
+            NetworkStream stream = client.GetStream();
 
-                byte[] message = System.Text.Encoding.ASCII.GetBytes(dataIn);
-                stream.Write(message, 0, message.Length);
 
-                stream.Close();
-                client.Close();
+            //Envia uma mensssagem ao servidor
+            byte[] message = System.Text.Encoding.ASCII.GetBytes(dataIn);
+            stream.Write(message, 0, message.Length);
 
-                
-            }
-            catch
-            {
+            //Recebe a resposta do servidor
+            byte[] resposta = new byte[256];
+            int byteRead = stream.Read(resposta, 0, resposta.Length);
+            string menssagemResposta = System.Text.Encoding.ASCII.GetString(resposta, 0, byteRead);
+            
 
-            }
+
+            stream.Close();
+            client.Close();
+            Console.ReadLine();
+
+            return menssagemResposta.ToString();
+
+
         }
 
 
