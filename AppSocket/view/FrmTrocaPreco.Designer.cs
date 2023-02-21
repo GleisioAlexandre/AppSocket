@@ -173,19 +173,19 @@
             // txtResposta
             // 
             this.txtResposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResposta.Location = new System.Drawing.Point(535, 24);
+            this.txtResposta.Location = new System.Drawing.Point(392, 12);
             this.txtResposta.Multiline = true;
             this.txtResposta.Name = "txtResposta";
             this.txtResposta.ReadOnly = true;
             this.txtResposta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResposta.Size = new System.Drawing.Size(439, 490);
+            this.txtResposta.Size = new System.Drawing.Size(495, 490);
             this.txtResposta.TabIndex = 12;
             // 
             // AppSoket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 544);
+            this.ClientSize = new System.Drawing.Size(896, 544);
             this.Controls.Add(this.txtResposta);
             this.Controls.Add(this.gpbTrocaPreco);
             this.Controls.Add(this.txtPreco);
@@ -201,7 +201,7 @@
             this.Controls.Add(this.btnConectar);
             this.MinimizeBox = false;
             this.Name = "AppSoket";
-            this.Text = "Troca de Prço";
+            this.Text = "7";
             this.ResumeLayout(false);
             this.PerformLayout();
 
