@@ -40,13 +40,10 @@ namespace AppSocket.controller
             client.Close();
             Console.ReadLine();
             sk.Retorno = menssagemResposta;
-
-            sk.print();
         }
             public string Resposta()
-        {
+            {
             return sk.Retorno;
-        }
-
+            }
     }
 }

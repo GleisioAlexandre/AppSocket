@@ -16,7 +16,7 @@ namespace AppSocket
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppSoket());
+            Application.Run(new view.FrmLeituraDeAbasteciemnto());
         }
     }
 }
