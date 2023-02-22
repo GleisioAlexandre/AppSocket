@@ -11,9 +11,10 @@ namespace AppSocket.controller
     class TrocaDePreco
     {
         ClassSocket sk = new ClassSocket();
-        public void  AlteraDePreco(string namehost, int port, string dataIn)
+
+        public void AlteraDePreco(string namehost, int port, string dataIn)
         {
-            
+
             sk.NameHost = namehost;
             sk.Porta = port;
 
@@ -30,20 +31,32 @@ namespace AppSocket.controller
             //Envia uma mensssagem ao servidor
             byte[] message = System.Text.Encoding.ASCII.GetBytes(dataIn);
             stream.Write(message, 0, message.Length);
-                
+
             //Recebe a resposta do servidor
-                byte[] resposta = new byte[256];
-                int byteRead = stream.Read(resposta, 0, resposta.Length);
-                string menssagemResposta = System.Text.Encoding.ASCII.GetString(resposta, 0, byteRead);
+            byte[] resposta = new byte[256];
+            int byteRead = stream.Read(resposta, 0, resposta.Length);
+            string menssagemResposta = System.Text.Encoding.ASCII.GetString(resposta, 0, byteRead);
+
+            sk.Retorno = menssagemResposta.ToString();
 
             stream.Close();
             client.Close();
             Console.ReadLine();
-            sk.Retorno = menssagemResposta;
+
+            sk.print();
+                      
         }
-            public string Resposta()
-            {
+
+        public string retorno() {
+
+
             return sk.Retorno;
-            }
+        }
+
+
+
+
+
+
     }
 }

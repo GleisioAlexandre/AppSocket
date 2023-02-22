@@ -12,20 +12,18 @@ namespace AppSocket.model
         private int porta;
         private string retorno;
 
-        public void print() {
-            Console.WriteLine("Servidor: " + nameHost + "\r\nPorta: " + porta + "\r\nRetorno: " + retorno);
-        }
-
         public ClassSocket()
         {
-            retorno = retorno;
         }
 
         public ClassSocket(string nameHost, int porta)
         {
             this.NameHost = nameHost;
             this.Porta = porta;
-            this.retorno = retorno;
+        }
+        public void print() {
+
+            Console.WriteLine(nameHost + porta + retorno);
         }
 
         public string NameHost { get => nameHost; set => nameHost = value; }
