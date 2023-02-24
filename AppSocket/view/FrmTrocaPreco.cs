@@ -33,12 +33,12 @@ namespace AppSocket
             }
             // Pegas as informações e cria o checksum
             CalculadorChecksum calculadorChecksum = new CalculadorChecksum();
-            string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), int.Parse(txtPreco.Text).ToString());
+            string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), int.Parse(txtPreco.Text.Replace(",", "")).ToString());
             //Envia as infomrções ao servidor junto com checksumn
             try
             {
                 TrocaDePreco sckt = new TrocaDePreco();
-                string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum + ")";
+                string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text.Replace(",", "") + checksum + ")";
                 sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
                 string str = sckt.retorno();
                 txtResposta.AppendText("Preço do Bico: " + str.Substring(2, str.Length - 3) + ", alterado com sucesso!\r\n");
@@ -55,6 +55,13 @@ namespace AppSocket
         private void teste_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Data inicial: " + dataInicial + "\r\nData Final: " + dataFinal);
+        }
+        private void txtPreco_Leave(object sender, EventArgs e)
+        {
+            if (txtPreco.Text.Length < 5)
+            {
+                txtPreco.Text = txtPreco.Text.PadRight(5,'0');
+            }
         }
         private void dtInicio_ValueChanged(object sender, EventArgs e)
         {

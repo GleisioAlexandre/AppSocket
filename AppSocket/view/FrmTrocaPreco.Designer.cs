@@ -149,9 +149,11 @@
             // 
             this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPreco.Location = new System.Drawing.Point(35, 383);
+            this.txtPreco.MaxLength = 5;
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(87, 31);
             this.txtPreco.TabIndex = 10;
+            this.txtPreco.Leave += new System.EventHandler(this.txtPreco_Leave);
             // 
             // label5
             // 
@@ -251,7 +253,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConectar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MinimizeBox = false;
             this.Name = "AppSoket";
             this.Text = "Troca de Prço";
             this.ResumeLayout(false);
