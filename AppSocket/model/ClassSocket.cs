@@ -15,17 +15,14 @@ namespace AppSocket.model
         public ClassSocket()
         {
         }
-
         public ClassSocket(string nameHost, int porta)
         {
             this.NameHost = nameHost;
             this.Porta = porta;
         }
         public void print() {
-
             Console.WriteLine(nameHost + porta + retorno);
         }
-
         public string NameHost { get => nameHost; set => nameHost = value; }
         public int Porta { get => porta; set => porta = value; }
         public string Retorno { get => retorno; set => retorno = value; }

@@ -23,7 +23,7 @@ namespace AppSocket
         {
             InitializeComponent();
         }
-
+        DateTime dataInicial, dataFinal;
         private void btnConectar_Click(object sender, EventArgs e)
         {
             string cabecalho = null;
@@ -34,39 +34,31 @@ namespace AppSocket
             // Pegas as informações e cria o checksum
             CalculadorChecksum calculadorChecksum = new CalculadorChecksum();
             string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), int.Parse(txtPreco.Text).ToString());
-
-            if (txtPreco.MaxLength < 4) {
-               
-            }
             //Envia as infomrções ao servidor junto com checksumn
             try
             {
-
                 TrocaDePreco sckt = new TrocaDePreco();
                 string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text + checksum + ")";
                 sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
-
-                
                 string str = sckt.retorno();
-
-                Console.WriteLine(str);
-
-                /*if (str != ("(U"+txtBico.Text+")")) {
-                    txtResposta.AppendText("Erro ao Tentar alterar o preço do bico, verifique as configurações e tente novamente.\r\n");
-                }
-                else
-                {
-                    
-                    txtResposta.AppendText("Preço do Bico: " + str.Substring(2, str.Length - 3) + ", alterado com sucesso!\r\n");
-                }*/
-
+                txtResposta.AppendText("Preço do Bico: " + str.Substring(2, str.Length - 3) + ", alterado com sucesso!\r\n");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao conectar o servidor!\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-       
+        private void dtPrazo_ValueChanged(object sender, EventArgs e)
+        {
+            dataFinal = dtPrazo.Value;
+        }
+        private void teste_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Data inicial: " + dataInicial + "\r\nData Final: " + dataFinal);
+        }
+        private void dtInicio_ValueChanged(object sender, EventArgs e)
+        {
+            dataInicial = dtInicio.Value;
+        }
     }
 }

@@ -41,6 +41,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.gpbTrocaPreco = new System.Windows.Forms.RadioButton();
             this.txtResposta = new System.Windows.Forms.TextBox();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtPrazo = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.teste = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConectar
@@ -91,7 +95,9 @@
             this.cbxPorta.Items.AddRange(new object[] {
             "2001",
             "1771",
-            "7002"});
+            "7002",
+            "857",
+            "771"});
             this.cbxPorta.Location = new System.Drawing.Point(256, 187);
             this.cbxPorta.Name = "cbxPorta";
             this.cbxPorta.Size = new System.Drawing.Size(121, 33);
@@ -181,11 +187,56 @@
             this.txtResposta.Size = new System.Drawing.Size(439, 471);
             this.txtResposta.TabIndex = 12;
             // 
+            // dtInicio
+            // 
+            this.dtInicio.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtInicio.Location = new System.Drawing.Point(218, 351);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(178, 29);
+            this.dtInicio.TabIndex = 13;
+            this.dtInicio.ValueChanged += new System.EventHandler(this.dtInicio_ValueChanged);
+            // 
+            // dtPrazo
+            // 
+            this.dtPrazo.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPrazo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPrazo.Location = new System.Drawing.Point(218, 400);
+            this.dtPrazo.Name = "dtPrazo";
+            this.dtPrazo.Size = new System.Drawing.Size(178, 29);
+            this.dtPrazo.TabIndex = 14;
+            this.dtPrazo.ValueChanged += new System.EventHandler(this.dtPrazo_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // teste
+            // 
+            this.teste.Location = new System.Drawing.Point(330, 478);
+            this.teste.Name = "teste";
+            this.teste.Size = new System.Drawing.Size(56, 25);
+            this.teste.TabIndex = 16;
+            this.teste.Text = "teste";
+            this.teste.UseVisualStyleBackColor = true;
+            this.teste.Click += new System.EventHandler(this.teste_Click);
+            // 
             // AppSoket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 544);
+            this.Controls.Add(this.teste);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dtPrazo);
+            this.Controls.Add(this.dtInicio);
             this.Controls.Add(this.txtResposta);
             this.Controls.Add(this.gpbTrocaPreco);
             this.Controls.Add(this.txtPreco);
@@ -223,6 +274,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton gpbTrocaPreco;
         private System.Windows.Forms.TextBox txtResposta;
+        private System.Windows.Forms.DateTimePicker dtInicio;
+        private System.Windows.Forms.DateTimePicker dtPrazo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button teste;
     }
 }
 
