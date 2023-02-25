@@ -34,7 +34,6 @@ namespace AppSocket.controller
             Console.ReadLine();
         }
         public string retorno() {
-
             return sk.Retorno;
         }
     }

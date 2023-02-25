@@ -42,6 +42,7 @@ namespace AppSocket
                 sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
                 string str = sckt.retorno();
                 txtResposta.AppendText("Preço do Bico: " + str.Substring(2, str.Length - 3) + ", alterado com sucesso!\r\n");
+            
             }
             catch (Exception ex)
             {
@@ -63,6 +64,12 @@ namespace AppSocket
                 txtPreco.Text = txtPreco.Text.PadRight(5,'0');
             }
         }
+
+        private void txtPreco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void dtInicio_ValueChanged(object sender, EventArgs e)
         {
             dataInicial = dtInicio.Value;
