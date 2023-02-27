@@ -25,11 +25,8 @@ namespace AppSocket.view
         {
 
             GeradorDeCodigoIdentFid();
-            Console.WriteLine(GeradorDeCodigoIdentFid());
-           enviaTagIdentifid();
+            enviaTagIdentifid();
         }
-
-
         public string controleTag(string controle)
         {
             switch (cbxControle.SelectedItem)
@@ -84,7 +81,6 @@ namespace AppSocket.view
         }
         public string GeradorDeCodigoIdentFid()
         {
-           
             string controle = null;
             string cabecalho = "?F";
             string parametro = "G";
@@ -93,8 +89,6 @@ namespace AppSocket.view
             turnoAF = null;
             turnoBI = null;
             turnoBF = null;
-
-
             if (cbxA.Checked && cbxB.Checked)
             {
                 turnoAI = "0000";
@@ -120,35 +114,20 @@ namespace AppSocket.view
             controle = controleTag(controle);
             Checksum ck = new Checksum();
             string retorno = ck.ChecksumCadastraIdentifid(cabecalho, controle, parametro, txtTag.Text.ToUpper(), turnoAI, turnoAF, turnoBI, turnoBF);
-
             string saida = null;
-
-
             return  saida = "(" + cabecalho + controle + parametro + txtTag.Text.ToUpper() + turnoAI + turnoAF + turnoBI + turnoBF + retorno + ")";
-
-            
         }
-
-        public string enviaTagIdentifid() {
-
-            try{
-                ComunicacaoSocket sckt = new ComunicacaoSocket();
+        public void enviaTagIdentifid() {
+            ComunicacaoSocket sckt = new ComunicacaoSocket();
+            try
+            {
                 sckt.Comunicacao(host, int.Parse(porta), GeradorDeCodigoIdentFid());
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Erro:" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-
-            }
-            return null;
         }
-
-            
-            
-    
         private void FrmIdentifid_Load(object sender, EventArgs e)
         {
             horaAI.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
