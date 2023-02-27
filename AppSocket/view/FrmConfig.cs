@@ -45,7 +45,14 @@ namespace AppSocket.view
 
         private void trocaDePreçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            AppSoket FrmtrocaPreco = new AppSoket();
+            FrmtrocaPreco.Show();
+        }
+
+        private void cadastroDeCartãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIdentifid CadIdentifid = new FrmIdentifid();
+            CadIdentifid.Show();
         }
     }
 }

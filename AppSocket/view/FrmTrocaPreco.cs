@@ -78,7 +78,7 @@ namespace AppSocket
         private void AppSoket_Load(object sender, EventArgs e)
         {
             txtServidor.Text = host;
-            cbxPorta.SelectedItem = porta;
+            txtPorta.Text = porta;
         }
     }
 }

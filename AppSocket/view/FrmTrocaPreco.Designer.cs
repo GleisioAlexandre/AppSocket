@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtServidor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbxPorta = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBico = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.gpbTrocaPreco = new System.Windows.Forms.RadioButton();
             this.txtResposta = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtPorta = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnConectar
@@ -70,6 +69,7 @@
             this.txtServidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServidor.Location = new System.Drawing.Point(35, 189);
             this.txtServidor.Name = "txtServidor";
+            this.txtServidor.ReadOnly = true;
             this.txtServidor.Size = new System.Drawing.Size(180, 31);
             this.txtServidor.TabIndex = 2;
             this.txtServidor.Text = "127.0.0.1";
@@ -83,22 +83,6 @@
             this.label2.Size = new System.Drawing.Size(63, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Porta";
-            // 
-            // cbxPorta
-            // 
-            this.cbxPorta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxPorta.FormattingEnabled = true;
-            this.cbxPorta.Items.AddRange(new object[] {
-            "2001",
-            "1771",
-            "7002",
-            "857",
-            "771"});
-            this.cbxPorta.Location = new System.Drawing.Point(256, 187);
-            this.cbxPorta.Name = "cbxPorta";
-            this.cbxPorta.Size = new System.Drawing.Size(121, 33);
-            this.cbxPorta.TabIndex = 4;
             // 
             // label3
             // 
@@ -186,21 +170,21 @@
             this.txtResposta.Size = new System.Drawing.Size(439, 471);
             this.txtResposta.TabIndex = 12;
             // 
-            // button1
+            // txtPorta
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtPorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPorta.Location = new System.Drawing.Point(256, 189);
+            this.txtPorta.Name = "txtPorta";
+            this.txtPorta.ReadOnly = true;
+            this.txtPorta.Size = new System.Drawing.Size(100, 31);
+            this.txtPorta.TabIndex = 16;
             // 
             // AppSoket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 544);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtPorta);
             this.Controls.Add(this.txtResposta);
             this.Controls.Add(this.gpbTrocaPreco);
             this.Controls.Add(this.txtPreco);
@@ -209,12 +193,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBico);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbxPorta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtServidor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConectar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AppSoket";
             this.Text = "Troca de Prço";
             this.Load += new System.EventHandler(this.AppSoket_Load);
@@ -229,7 +213,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtServidor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbxPorta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBico;
         private System.Windows.Forms.Label label4;
@@ -238,7 +221,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton gpbTrocaPreco;
         private System.Windows.Forms.TextBox txtResposta;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPorta;
     }
 }
 

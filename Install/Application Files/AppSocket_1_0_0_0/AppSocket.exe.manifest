@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="AppSocket.exe" version="1.0.0.0" publicKeyToken="92b9605ff5f988fd" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="AppSocket" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="AppSocket.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opções de Manifesto UAC
+          Se desejar mudar o nível de Controle de Conta de Usuário do Windows, substitua o 
+          nó requestedExecutionLevel por um dos seguintes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Se deseja usar a Virtualização de Arquivos e Registro para compatibilidade 
+         com versões anteriores, exclua o nó requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppSocket.exe" size="27584">
+      <assemblyIdentity name="AppSocket" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>n6wCjuyGz7rLaY3fRJAfdhIueuKvacFW4dFtEYNNeSw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="AppSocket.exe.config" size="300">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nYRD7DReCQWu+MQuN+YiZTzDwowmm+V9FX9PybtvPRU=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=GLEISIO-PC\jucaf" issuerKeyHash="eba41e87bba3ffc2d2768a717fa87e40dc7f9a33" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>nhhOcLTih/i9wvi3hm3QcxUZ26PLoL2QO6EqKvqqFQA=</DigestValue></Reference></SignedInfo><SignatureValue>N5zmJe3pgVPVA8lbaNWhw3KzX3fdAOd8B0AY2GqWdH8fqirOV0TY1JAeCby3hUgoat25jphT7EHzlSJ6HO+6NCfCMIF22pzF0H8oDfHwQHIxaGCgmPI/OW02BeiVAmc9/FjovWynQWH7BcIgPADNhSwHPqmGjH5AwAEq3G4MDf4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qUVwqiHQ21viIuVZBr9DNQVfoIzdKoBlwXlqetTTd2hLrsRn6U3Du43NMN7Ll+SoT21U1452MD3VDAPUCV9MMEgGSa7t8O0Gz9a7DndTN4Q8c2UWC3qq2uoSXzDBAbZeA+ckIuQCk5B9YqkUc3XVuWa39lud/qMFsJHKnjpPiC0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0015aafa2a2aa13b90bda0cba3db191573d06d86b7f8c2bdf887e2b4704e189e" Description="" Url=""><as:assemblyIdentity name="AppSocket.exe" version="1.0.0.0" publicKeyToken="92b9605ff5f988fd" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=GLEISIO-PC\jucaf</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>CJX+TIIzlqt6s/xGCP95MhjHQfMOaiMPS8mL5Onw7oA=</DigestValue></Reference></SignedInfo><SignatureValue>SBZdm0hWkNqTg70K49bEJWXmAXla4JuIKaafyALr2TeWgNGonDBKj1WAH5GxrkdIKnWzNyAUMBzKnEWO2fF1ttH5PcAP2ejD66GWrszzZVx7Wbc35Oe2PAQmsmxTtya56SaoR3AUMXli149IXE2pdeQqQYG4Wf7IAZMN1FI/Bw0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qUVwqiHQ21viIuVZBr9DNQVfoIzdKoBlwXlqetTTd2hLrsRn6U3Du43NMN7Ll+SoT21U1452MD3VDAPUCV9MMEgGSa7t8O0Gz9a7DndTN4Q8c2UWC3qq2uoSXzDBAbZeA+ckIuQCk5B9YqkUc3XVuWa39lud/qMFsJHKnjpPiC0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQIuay4CMVgKBDT8a15mjTiDANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAARwBMAEUASQBTAEkATwAtAFAAQwBcAGoAdQBjAGEAZjAeFw0yMzAyMjcwMjM2NDJaFw0yNDAyMjcwODM2NDJaMCsxKTAnBgNVBAMeIABHAEwARQBJAFMASQBPAC0AUABDAFwAagB1AGMAYQBmMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpRXCqIdDbW+Ii5VkGv0M1BV+gjN0qgGXBeWp61NN3aEuuxGfpTcO7jc0w3suX5KhPbVTXjnYwPdUMA9QJX0wwSAZJru3w7QbP1rsOd1M3hDxzZRYLeqra6hJfMMEBtl4D5yQi5AKTkH1iqRRzddW5Zrf2W53+owWwkcqeOk+ILQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAEL7YN7AsGiXWt9pGS2wejnaa9uVsNR2aX8lv4rrY1753BfZn4zSA1dO6ZxP+TjkTAfA5+1e2l9mJtG5f5kLp7o0YGB9z8n6E5wZm/YGZ9g1XGu/lpBS888hRjZusUiBRMhyI1sH82b02rgN3k7ol0Nui1o69YFWCUDuRjCQgTTQ</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
