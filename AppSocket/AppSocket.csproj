@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,10 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\CalculadorChecksum.cs" />
-    <Compile Include="controller\TrocaDePreco.cs" />
+    <Compile Include="controller\Chcksum\Checksum.cs" />
+    <Compile Include="controller\ComunicacaoSocket.cs" />
     <Compile Include="model\ClassChecksum.cs" />
     <Compile Include="model\ClassSocket.cs" />
+    <Compile Include="view\FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmIdentifid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmIdentifid.Designer.cs">
+      <DependentUpon>FrmIdentifid.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmTrocaPreco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +71,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="view\FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmIdentifid.resx">
+      <DependentUpon>FrmIdentifid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FrmTrocaPreco.resx">
       <DependentUpon>FrmTrocaPreco.cs</DependentUpon>
     </EmbeddedResource>

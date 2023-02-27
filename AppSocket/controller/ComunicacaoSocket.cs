@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace AppSocket.controller
 {
-    class TrocaDePreco
+    class ComunicacaoSocket
     {
         ClassSocket sk = new ClassSocket();
-        public void AlteraDePreco(string namehost, int port, string dataIn)
+        public void Comunicacao(string namehost, int port, string dataIn)
         {
             sk.NameHost = namehost;
             sk.Porta = port;

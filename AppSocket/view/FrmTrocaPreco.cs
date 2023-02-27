@@ -14,16 +14,20 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace AppSocket
 {
     public partial class AppSoket : Form
     {
+        string host = ConfigurationManager.AppSettings["host"];
+        string porta = ConfigurationManager.AppSettings["porta"];
         public AppSoket()
         {
             InitializeComponent();
         }
-        DateTime dataInicial, dataFinal;
+        
+                      
         private void btnConectar_Click(object sender, EventArgs e)
         {
             string cabecalho = null;
@@ -32,14 +36,14 @@ namespace AppSocket
                 cabecalho = "&U";
             }
             // Pegas as informações e cria o checksum
-            CalculadorChecksum calculadorChecksum = new CalculadorChecksum();
-            string checksum = calculadorChecksum.calcular(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), int.Parse(txtPreco.Text.Replace(",", "")).ToString());
+            Checksum calculadorChecksum = new Checksum();
+            string checksum = calculadorChecksum.ChecksumAlteraPReco(cabecalho, txtBico.Text, cbxNPreco.SelectedItem.ToString(), int.Parse(txtPreco.Text.Replace(",", "")).ToString());
             //Envia as infomrções ao servidor junto com checksumn
             try
             {
-                TrocaDePreco sckt = new TrocaDePreco();
+                ComunicacaoSocket sckt = new ComunicacaoSocket();
                 string dataIn = "(" + cabecalho + txtBico.Text + cbxNPreco.SelectedItem + txtPreco.Text.Replace(",", "") + checksum + ")";
-                sckt.AlteraDePreco(txtServidor.Text, int.Parse(cbxPorta.SelectedItem.ToString()), dataIn);
+                sckt.Comunicacao(host, int.Parse(porta), dataIn);
                 string str = sckt.retorno();
                 txtResposta.AppendText("Preço do Bico: " + str.Substring(2, str.Length - 3) + ", alterado com sucesso!\r\n");
             
@@ -51,11 +55,11 @@ namespace AppSocket
         }
         private void dtPrazo_ValueChanged(object sender, EventArgs e)
         {
-            dataFinal = dtPrazo.Value;
+           // dataFinal = dtPrazo.Value;
         }
         private void teste_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Data inicial: " + dataInicial + "\r\nData Final: " + dataFinal);
+           // Console.WriteLine("Data inicial: " + dataInicial + "\r\nData Final: " + dataFinal);
         }
         private void txtPreco_Leave(object sender, EventArgs e)
         {
@@ -65,14 +69,16 @@ namespace AppSocket
             }
         }
 
-        private void txtPreco_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void dtInicio_ValueChanged(object sender, EventArgs e)
         {
-            dataInicial = dtInicio.Value;
+           // dataInicial = dtInicio.Value;
+        }
+
+        private void AppSoket_Load(object sender, EventArgs e)
+        {
+            txtServidor.Text = host;
+            cbxPorta.SelectedItem = porta;
         }
     }
 }

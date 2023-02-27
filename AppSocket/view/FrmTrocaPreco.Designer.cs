@@ -217,6 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AppSoket";
             this.Text = "Troca de Prço";
+            this.Load += new System.EventHandler(this.AppSoket_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
