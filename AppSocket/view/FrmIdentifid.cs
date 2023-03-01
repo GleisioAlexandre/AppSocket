@@ -27,64 +27,78 @@ namespace AppSocket.view
             GeradorDeCodigoIdentFid();
             enviaTagIdentifid();
         }
-        public string controleTag(string controle)
+        public string controleTag(string tipo)
         {
-            switch (cbxControle.SelectedItem)
+            switch (cbxControle.SelectedIndex)
             {
-                case "Tag veículo":
-                    controle = "21";
+                case 0:
+                    tipo = "1";
                     break;
-                case "Tag máquina de lavar":
-                    controle = "22";
+                case 1:
+                    tipo = "2";
                     break;
-                case "Reservado":
-                    controle = "23";
+                case 2:
+                    tipo = "3";
                     break;
-                case "Cliente nível 1":
-                    controle = "24";
+                case 3:
+                    tipo = "4";
                     break;
-                case "Cliente nível 2":
-                    controle = "25";
+                case 4:
+                    tipo = "5";
                     break;
-                case "Cliente nível 3":
-                    controle = "26";
+                case 5:
+                    tipo = "6";
                     break;
-                case "Funcionário nível 1":
-                    controle = "27";
+                case 6:
+                    tipo = "7";
                     break;
-                case "Funcionário nível 2":
-                    controle = "28";
+                case 7:
+                    tipo = "8";
                     break;
-                case "Funcionário nível 3":
-                    controle = "29";
+                case 8:
+                    tipo = "9";
                     break;
-                case "Funcionário nível 4":
-                    controle = "2A";
+                case 9:
+                    tipo = "A";
                     break;
-                case "Funcionário nível 5":
-                    controle = "2B";
+                case 10:
+                    tipo = "B";
                     break;
-                case "Funcionário nível 6":
-                    controle = "2C";
+                case 11:
+                    tipo = "C";
                     break;
-                case "Gerente nível 1":
-                    controle = "2D";
+                case 12:
+                    tipo = "D";
                     break;
-                case "Gerente nível 2":
-                    controle = "2E";
+                case 13:
+                    tipo = "E";
                     break;
-                case "Controle total":
-                    controle = "2F";
+                case 14:
+                    tipo = "F";
                     break;
             }
+            return tipo;
+        }
+        public string permicao(string controle)
+        {
+            if (rbReservado.Checked) { controle = "1"; }
+            else if (rbBomba.Checked) { controle = "2"; }
+            else if (rbTurno.Checked) { controle = "4"; }
+            else if (rbBombaTurno.Checked) { controle = "6"; }
+            else if (rbMaquina.Checked) { controle = "8"; }
+            else  { controle = "A"; }
+
             return controle;
         }
         public string GeradorDeCodigoIdentFid()
         {
+            string tipo = null;
             string controle = null;
             string cabecalho = "?F";
             string parametro = "G";
             string turnoAI, turnoAF, turnoBI, turnoBF;
+            string saida = null;
+            string retorno = null;
             turnoAI = null;
             turnoAF = null;
             turnoBI = null;
@@ -107,15 +121,22 @@ namespace AppSocket.view
             {
                 turnoAI = "0000";
                 turnoAF = "0000";
-                ; turnoBI = horaBI.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaBI.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
+                turnoBI = horaBI.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaBI.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
                 turnoBF = horaBF.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaBF.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
             }
+            try
+            {
+                controle = controleTag(tipo) + permicao(controle);
+                Checksum ck = new Checksum();
+                retorno = ck.ChecksumCadastraIdentifid(cabecalho, controle, parametro, txtTag.Text.ToUpper(), turnoAI, turnoAF, turnoBI, turnoBF);
 
-            controle = controleTag(controle);
-            Checksum ck = new Checksum();
-            string retorno = ck.ChecksumCadastraIdentifid(cabecalho, controle, parametro, txtTag.Text.ToUpper(), turnoAI, turnoAF, turnoBI, turnoBF);
-            string saida = null;
-            return  saida = "(" + cabecalho + controle + parametro + txtTag.Text.ToUpper() + turnoAI + turnoAF + turnoBI + turnoBF + retorno + ")";
+               // MessageBox.Show("Cadastro da Tag: " + txtTag.Text + ", realizado com sucesso!", "Identifd", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return saida = "(" + cabecalho + controle + parametro + txtTag.Text.ToUpper() + turnoAI + turnoAF + turnoBI + turnoBF + retorno + ")";
         }
         public void enviaTagIdentifid() {
             ComunicacaoSocket sckt = new ComunicacaoSocket();
@@ -135,6 +156,7 @@ namespace AppSocket.view
             horaBI.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaBF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             lblHost.Text = "Host: " + host + " Porta: " + porta;
+            cbxControle.SelectedIndex = 6;
         }
     }
 }

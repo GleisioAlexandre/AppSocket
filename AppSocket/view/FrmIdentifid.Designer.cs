@@ -44,6 +44,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.horaBI = new System.Windows.Forms.DateTimePicker();
             this.lblHost = new System.Windows.Forms.Label();
+            this.rbReservado = new System.Windows.Forms.RadioButton();
+            this.rbBomba = new System.Windows.Forms.RadioButton();
+            this.rbTurno = new System.Windows.Forms.RadioButton();
+            this.rbBombaTurno = new System.Windows.Forms.RadioButton();
+            this.rbMaquina = new System.Windows.Forms.RadioButton();
+            this.rbBombaMaquina = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnGravarRfid
@@ -111,6 +117,8 @@
             // cbxA
             // 
             this.cbxA.AutoSize = true;
+            this.cbxA.Checked = true;
+            this.cbxA.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxA.Location = new System.Drawing.Point(12, 136);
             this.cbxA.Name = "cbxA";
             this.cbxA.Size = new System.Drawing.Size(64, 17);
@@ -121,6 +129,8 @@
             // cbxB
             // 
             this.cbxB.AutoSize = true;
+            this.cbxB.Checked = true;
+            this.cbxB.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxB.Location = new System.Drawing.Point(12, 178);
             this.cbxB.Name = "cbxB";
             this.cbxB.Size = new System.Drawing.Size(64, 17);
@@ -215,11 +225,84 @@
             this.lblHost.TabIndex = 15;
             this.lblHost.Text = "Host";
             // 
+            // rbReservado
+            // 
+            this.rbReservado.AutoSize = true;
+            this.rbReservado.Location = new System.Drawing.Point(12, 250);
+            this.rbReservado.Name = "rbReservado";
+            this.rbReservado.Size = new System.Drawing.Size(77, 17);
+            this.rbReservado.TabIndex = 16;
+            this.rbReservado.TabStop = true;
+            this.rbReservado.Text = "Reservado";
+            this.rbReservado.UseVisualStyleBackColor = true;
+            // 
+            // rbBomba
+            // 
+            this.rbBomba.AutoSize = true;
+            this.rbBomba.Checked = true;
+            this.rbBomba.Location = new System.Drawing.Point(13, 273);
+            this.rbBomba.Name = "rbBomba";
+            this.rbBomba.Size = new System.Drawing.Size(90, 17);
+            this.rbBomba.TabIndex = 17;
+            this.rbBomba.TabStop = true;
+            this.rbBomba.Text = "Libera Bomba";
+            this.rbBomba.UseVisualStyleBackColor = true;
+            // 
+            // rbTurno
+            // 
+            this.rbTurno.AutoSize = true;
+            this.rbTurno.Location = new System.Drawing.Point(13, 296);
+            this.rbTurno.Name = "rbTurno";
+            this.rbTurno.Size = new System.Drawing.Size(94, 17);
+            this.rbTurno.TabIndex = 18;
+            this.rbTurno.TabStop = true;
+            this.rbTurno.Text = "Respeita turno";
+            this.rbTurno.UseVisualStyleBackColor = true;
+            // 
+            // rbBombaTurno
+            // 
+            this.rbBombaTurno.AutoSize = true;
+            this.rbBombaTurno.Location = new System.Drawing.Point(13, 319);
+            this.rbBombaTurno.Name = "rbBombaTurno";
+            this.rbBombaTurno.Size = new System.Drawing.Size(164, 17);
+            this.rbBombaTurno.TabIndex = 19;
+            this.rbBombaTurno.TabStop = true;
+            this.rbBombaTurno.Text = "Libera bomba / respeita turno";
+            this.rbBombaTurno.UseVisualStyleBackColor = true;
+            // 
+            // rbMaquina
+            // 
+            this.rbMaquina.AutoSize = true;
+            this.rbMaquina.Location = new System.Drawing.Point(13, 342);
+            this.rbMaquina.Name = "rbMaquina";
+            this.rbMaquina.Size = new System.Drawing.Size(138, 17);
+            this.rbMaquina.TabIndex = 20;
+            this.rbMaquina.TabStop = true;
+            this.rbMaquina.Text = "Libera máquina de lavar";
+            this.rbMaquina.UseVisualStyleBackColor = true;
+            // 
+            // rbBombaMaquina
+            // 
+            this.rbBombaMaquina.AutoSize = true;
+            this.rbBombaMaquina.Location = new System.Drawing.Point(12, 365);
+            this.rbBombaMaquina.Name = "rbBombaMaquina";
+            this.rbBombaMaquina.Size = new System.Drawing.Size(214, 17);
+            this.rbBombaMaquina.TabIndex = 21;
+            this.rbBombaMaquina.TabStop = true;
+            this.rbBombaMaquina.Text = "Libera bombas / libera máquina de lavar";
+            this.rbBombaMaquina.UseVisualStyleBackColor = true;
+            // 
             // FrmIdentifid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 495);
+            this.Controls.Add(this.rbBombaMaquina);
+            this.Controls.Add(this.rbMaquina);
+            this.Controls.Add(this.rbBombaTurno);
+            this.Controls.Add(this.rbTurno);
+            this.Controls.Add(this.rbBomba);
+            this.Controls.Add(this.rbReservado);
             this.Controls.Add(this.lblHost);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.horaBF);
@@ -264,5 +347,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker horaBI;
         private System.Windows.Forms.Label lblHost;
+        private System.Windows.Forms.RadioButton rbReservado;
+        private System.Windows.Forms.RadioButton rbBomba;
+        private System.Windows.Forms.RadioButton rbTurno;
+        private System.Windows.Forms.RadioButton rbBombaTurno;
+        private System.Windows.Forms.RadioButton rbMaquina;
+        private System.Windows.Forms.RadioButton rbBombaMaquina;
     }
 }
