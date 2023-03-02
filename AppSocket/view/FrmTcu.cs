@@ -20,19 +20,23 @@ namespace AppSocket.view
 
         private void button1_Click(object sender, EventArgs e)
         {
-           SerialPort serialPort = new SerialPort ("COM6", 9600, Parity.None, 8, StopBits.One);
-            byte[] dados = Encoding.ASCII.GetBytes("(%MA$D7)");
-            serialPort.Open();
-            if (serialPort.IsOpen) {
-                lblteste.Text = "Conectado";
-               serialPort.WriteLine(dados.ToString());
-                string data = serialPort.ReadLine();
-                serialPort.Close();
-                txtTeste.Text = Encoding.ASCII.GetString(dados);
-                
-                
-               
-            }
+            
+            portaSerial.Open();
+            string Rfid = portaSerial.ReadExisting().Replace("(", "").Replace(")", "").Replace("#", "").Replace("R", "").Substring(0, Text.Length + 10);
+            portaSerial.WriteLine("(%MD$DA)");
+            txtTeste.AppendText(Rfid) ;
+            portaSerial.Close();
+          
+           
+           
+
+
+
+
         }
+
     }
 }
+
+
+

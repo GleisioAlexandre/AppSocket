@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTeste = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblteste = new System.Windows.Forms.Label();
+            this.portaSerial = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // txtTeste
@@ -51,21 +52,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblteste
+            // portaSerial
             // 
-            this.lblteste.AutoSize = true;
-            this.lblteste.Location = new System.Drawing.Point(133, 165);
-            this.lblteste.Name = "lblteste";
-            this.lblteste.Size = new System.Drawing.Size(35, 13);
-            this.lblteste.TabIndex = 2;
-            this.lblteste.Text = "label1";
+            this.portaSerial.PortName = "COM6";
             // 
             // FrmTcu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 595);
-            this.Controls.Add(this.lblteste);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTeste);
             this.Name = "FrmTcu";
@@ -78,6 +73,6 @@
         #endregion
         private System.Windows.Forms.TextBox txtTeste;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblteste;
+        private System.IO.Ports.SerialPort portaSerial;
     }
 }
