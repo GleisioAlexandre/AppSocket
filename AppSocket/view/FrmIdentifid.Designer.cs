@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnGravarRfid = new System.Windows.Forms.Button();
             this.cbxControle = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,6 +51,9 @@
             this.rbBombaTurno = new System.Windows.Forms.RadioButton();
             this.rbMaquina = new System.Windows.Forms.RadioButton();
             this.rbBombaMaquina = new System.Windows.Forms.RadioButton();
+            this.cbxPortTcu = new System.Windows.Forms.ComboBox();
+            this.portaSerial = new System.IO.Ports.SerialPort(this.components);
+            this.btnTcu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGravarRfid
@@ -82,7 +86,7 @@
             "Gerente nível 1",
             "Gerente nível 2",
             "Controle total"});
-            this.cbxControle.Location = new System.Drawing.Point(300, 85);
+            this.cbxControle.Location = new System.Drawing.Point(298, 86);
             this.cbxControle.Name = "cbxControle";
             this.cbxControle.Size = new System.Drawing.Size(117, 21);
             this.cbxControle.TabIndex = 1;
@@ -90,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(297, 69);
+            this.label1.Location = new System.Drawing.Point(295, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 2;
@@ -102,6 +106,7 @@
             this.txtTag.Location = new System.Drawing.Point(12, 86);
             this.txtTag.MaxLength = 16;
             this.txtTag.Name = "txtTag";
+            this.txtTag.ReadOnly = true;
             this.txtTag.Size = new System.Drawing.Size(158, 20);
             this.txtTag.TabIndex = 3;
             // 
@@ -292,11 +297,35 @@
             this.rbBombaMaquina.Text = "Libera bombas / libera máquina de lavar";
             this.rbBombaMaquina.UseVisualStyleBackColor = true;
             // 
+            // cbxPortTcu
+            // 
+            this.cbxPortTcu.FormattingEnabled = true;
+            this.cbxPortTcu.Location = new System.Drawing.Point(298, 164);
+            this.cbxPortTcu.Name = "cbxPortTcu";
+            this.cbxPortTcu.Size = new System.Drawing.Size(117, 21);
+            this.cbxPortTcu.TabIndex = 23;
+            // 
+            // portaSerial
+            // 
+            this.portaSerial.PortName = "COM6";
+            // 
+            // btnTcu
+            // 
+            this.btnTcu.Location = new System.Drawing.Point(327, 130);
+            this.btnTcu.Name = "btnTcu";
+            this.btnTcu.Size = new System.Drawing.Size(53, 23);
+            this.btnTcu.TabIndex = 24;
+            this.btnTcu.Text = "TCU";
+            this.btnTcu.UseVisualStyleBackColor = true;
+            this.btnTcu.Click += new System.EventHandler(this.btnTcu_Click);
+            // 
             // FrmIdentifid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 495);
+            this.ClientSize = new System.Drawing.Size(427, 495);
+            this.Controls.Add(this.btnTcu);
+            this.Controls.Add(this.cbxPortTcu);
             this.Controls.Add(this.rbBombaMaquina);
             this.Controls.Add(this.rbMaquina);
             this.Controls.Add(this.rbBombaTurno);
@@ -353,5 +382,8 @@
         private System.Windows.Forms.RadioButton rbBombaTurno;
         private System.Windows.Forms.RadioButton rbMaquina;
         private System.Windows.Forms.RadioButton rbBombaMaquina;
+        private System.Windows.Forms.ComboBox cbxPortTcu;
+        private System.IO.Ports.SerialPort portaSerial;
+        private System.Windows.Forms.Button btnTcu;
     }
 }

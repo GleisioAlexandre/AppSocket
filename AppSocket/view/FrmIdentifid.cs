@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,13 @@ namespace AppSocket.view
 
             GeradorDeCodigoIdentFid();
             enviaTagIdentifid();
+        }
+        public string portasDisponiveis() {
+
+            string[] portasDisponiveis = SerialPort.GetPortNames();
+
+            cbxPortTcu.Items.AddRange(portasDisponiveis);
+            return null;
         }
         public string controleTag(string tipo)
         {
@@ -153,6 +161,34 @@ namespace AppSocket.view
             horaBF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             lblHost.Text = "Host: " + host + " Porta: " + porta;
             cbxControle.SelectedIndex = 6;
+            portasDisponiveis();
+            txtTag.Focus();
+        }
+
+        
+        private void btnTcu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTag.Equals("")) {
+                    MessageBox.Show("O campos da tag não pode ser vazio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    portaSerial.Open();
+                    string Rfid = portaSerial.ReadExisting().Replace("(", "").Replace(")", "").Replace("#", "").Replace("R", "").Replace("$", "").Substring(0, Text.Length + 4);
+                    portaSerial.WriteLine("(%MD$DA)");
+                    txtTag.Text = Rfid;
+                    portaSerial.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+                txtTag.Focus();
+            }
+
+
         }
     }
 }

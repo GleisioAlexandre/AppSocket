@@ -118,7 +118,7 @@
             // trocaDePreçoToolStripMenuItem
             // 
             this.trocaDePreçoToolStripMenuItem.Name = "trocaDePreçoToolStripMenuItem";
-            this.trocaDePreçoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trocaDePreçoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.trocaDePreçoToolStripMenuItem.Text = "Troca de Preço";
             this.trocaDePreçoToolStripMenuItem.Click += new System.EventHandler(this.trocaDePreçoToolStripMenuItem_Click);
             // 
@@ -133,7 +133,7 @@
             // cadastroDeCartãoToolStripMenuItem
             // 
             this.cadastroDeCartãoToolStripMenuItem.Name = "cadastroDeCartãoToolStripMenuItem";
-            this.cadastroDeCartãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroDeCartãoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.cadastroDeCartãoToolStripMenuItem.Text = "Cadastro de Cartão";
             this.cadastroDeCartãoToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeCartãoToolStripMenuItem_Click);
             // 
