@@ -32,8 +32,12 @@ namespace AppSocket.controller
             stream.Close();
             client.Close();
             Console.ReadLine();
+
+          
         }
         public string retorno() {
+
+            
             return sk.Retorno;
         }
     }

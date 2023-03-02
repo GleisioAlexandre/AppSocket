@@ -91,6 +91,12 @@
     <Compile Include="view\FrmIdentifid.Designer.cs">
       <DependentUpon>FrmIdentifid.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FrmTcu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmTcu.Designer.cs">
+      <DependentUpon>FrmTcu.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmTrocaPreco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmIdentifid.resx">
       <DependentUpon>FrmIdentifid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmTcu.resx">
+      <DependentUpon>FrmTcu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmTrocaPreco.resx">
       <DependentUpon>FrmTrocaPreco.cs</DependentUpon>

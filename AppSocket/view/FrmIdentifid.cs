@@ -79,30 +79,27 @@ namespace AppSocket.view
             }
             return tipo;
         }
-        public string permicao(string controle)
+        public string permicao(string teste)
         {
-            if (rbReservado.Checked) { controle = "1"; }
-            else if (rbBomba.Checked) { controle = "2"; }
-            else if (rbTurno.Checked) { controle = "4"; }
-            else if (rbBombaTurno.Checked) { controle = "6"; }
-            else if (rbMaquina.Checked) { controle = "8"; }
-            else  { controle = "A"; }
+            if (rbReservado.Checked) { teste = "1"; }
+            else if (rbBomba.Checked) { teste = "2"; }
+            else if (rbTurno.Checked) { teste = "4"; }
+            else if (rbBombaTurno.Checked) { teste = "6"; }
+            else if (rbMaquina.Checked) { teste = "8"; }
+            else  { teste = "A"; }
 
-            return controle;
+            return teste;
         }
         public string GeradorDeCodigoIdentFid()
         {
             string tipo = null;
+            string teste = null;
             string controle = null;
             string cabecalho = "?F";
             string parametro = "G";
             string turnoAI, turnoAF, turnoBI, turnoBF;
             string saida = null;
             string retorno = null;
-            turnoAI = null;
-            turnoAF = null;
-            turnoBI = null;
-            turnoBF = null;
             if (cbxA.Checked && cbxB.Checked)
             {
                 turnoAI = "0000";
@@ -126,11 +123,9 @@ namespace AppSocket.view
             }
             try
             {
-                controle = controleTag(tipo) + permicao(controle);
+                controle = permicao(teste) + controleTag(tipo);
                 Checksum ck = new Checksum();
                 retorno = ck.ChecksumCadastraIdentifid(cabecalho, controle, parametro, txtTag.Text.ToUpper(), turnoAI, turnoAF, turnoBI, turnoBF);
-
-               // MessageBox.Show("Cadastro da Tag: " + txtTag.Text + ", realizado com sucesso!", "Identifd", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -143,6 +138,7 @@ namespace AppSocket.view
             try
             {
                 sckt.Comunicacao(host, int.Parse(porta), GeradorDeCodigoIdentFid());
+                MessageBox.Show("Cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
