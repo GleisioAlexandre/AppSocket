@@ -217,9 +217,9 @@ namespace AppSocket.view
                     portaSerial.Close();
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show("Erro: " + ex);
+                MessageBox.Show("Aproxime o cartão da leitora , antes de copiar código!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTag.Focus();
             }
             finally
@@ -229,5 +229,16 @@ namespace AppSocket.view
 
 
         }
-    }
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e)
+		{
+			if (cbxTagManual.Checked)
+			{
+				txtTag.ReadOnly = true;
+			}
+			else {
+				txtTag.ReadOnly = false;
+			}
+		}
+	}
 }
