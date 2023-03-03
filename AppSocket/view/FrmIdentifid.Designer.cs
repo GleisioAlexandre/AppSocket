@@ -106,7 +106,6 @@
             this.txtTag.Location = new System.Drawing.Point(12, 86);
             this.txtTag.MaxLength = 16;
             this.txtTag.Name = "txtTag";
-            this.txtTag.ReadOnly = true;
             this.txtTag.Size = new System.Drawing.Size(158, 20);
             this.txtTag.TabIndex = 3;
             // 
@@ -122,8 +121,6 @@
             // cbxA
             // 
             this.cbxA.AutoSize = true;
-            this.cbxA.Checked = true;
-            this.cbxA.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxA.Location = new System.Drawing.Point(12, 136);
             this.cbxA.Name = "cbxA";
             this.cbxA.Size = new System.Drawing.Size(64, 17);
@@ -134,8 +131,6 @@
             // cbxB
             // 
             this.cbxB.AutoSize = true;
-            this.cbxB.Checked = true;
-            this.cbxB.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxB.Location = new System.Drawing.Point(12, 178);
             this.cbxB.Name = "cbxB";
             this.cbxB.Size = new System.Drawing.Size(64, 17);

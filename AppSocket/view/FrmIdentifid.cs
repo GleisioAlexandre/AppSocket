@@ -22,6 +22,33 @@ namespace AppSocket.view
             InitializeComponent();
         }
 
+        public void Rfid(){
+
+            try
+            {
+                if (txtTag.Equals(""))
+                {
+                    MessageBox.Show("O campos da tag não pode ser vazio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    portaSerial.Open();
+                    portaSerial.WriteLine("(%MA$D7)");
+                    string Rfid = portaSerial.ReadExisting().Replace("(", "").Replace(")", "").Replace("#", "").Replace("R", "").Replace("$", "").Substring(0, Text.Length + 4);
+                    txtTag.Text = Rfid;
+                    portaSerial.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+                txtTag.Focus();
+            }
+            finally
+            {
+                portaSerial.Close();
+            }
+        }
         private void btnGravarRfid_Click(object sender, EventArgs e)
         {
 
@@ -110,10 +137,10 @@ namespace AppSocket.view
             string retorno = null;
             if (cbxA.Checked && cbxB.Checked)
             {
-                turnoAI = "0000";
-                turnoAF = "0000";
-                turnoBF = "0000";
-                turnoBI = "0000";
+                turnoAI = horaAI.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaAI.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
+                turnoAF = horaAF.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaAF.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
+                turnoBF = horaBI.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaBI.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
+                turnoBI = horaBF.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaBF.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
             }
             else if (cbxA.Checked)
             {
@@ -122,12 +149,19 @@ namespace AppSocket.view
                 turnoBF = "0000";
                 turnoBI = "0000";
             }
-            else
+            else if (cbxB.Checked)
             {
                 turnoAI = "0000";
                 turnoAF = "0000";
                 turnoBI = horaBI.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaBI.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
                 turnoBF = horaBF.Value.Hour.ToString().PadLeft(2, '0').ToString() + horaBF.Value.Minute.ToString().PadRight(2, '0').Replace(":", "").ToString();
+            }
+            else
+            {
+                turnoAI = "0000";
+                turnoAF = "0000";
+                turnoBI = "0000";
+                turnoBF = "0000";
             }
             try
             {
@@ -163,6 +197,7 @@ namespace AppSocket.view
             cbxControle.SelectedIndex = 6;
             portasDisponiveis();
             txtTag.Focus();
+           
         }
 
         
@@ -176,8 +211,8 @@ namespace AppSocket.view
                 else
                 {
                     portaSerial.Open();
+                    portaSerial.WriteLine("(%MA$D7)");
                     string Rfid = portaSerial.ReadExisting().Replace("(", "").Replace(")", "").Replace("#", "").Replace("R", "").Replace("$", "").Substring(0, Text.Length + 4);
-                    portaSerial.WriteLine("(%MD$DA)");
                     txtTag.Text = Rfid;
                     portaSerial.Close();
                 }
@@ -186,6 +221,10 @@ namespace AppSocket.view
             {
                 MessageBox.Show("Erro: " + ex);
                 txtTag.Focus();
+            }
+            finally
+            {
+                portaSerial.Close();
             }
 
 
