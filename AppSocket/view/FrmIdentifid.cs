@@ -180,7 +180,7 @@ namespace AppSocket.view
             try
             {
                 sckt.Comunicacao(host, int.Parse(porta), GeradorDeCodigoIdentFid());
-                MessageBox.Show("Cadastrado com sucesso!");
+                MessageBox.Show("A tag" + "foi cadastrado com sucesso!", "Rfid", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -199,8 +199,6 @@ namespace AppSocket.view
             txtTag.Focus();
            
         }
-
-        
         private void btnTcu_Click(object sender, EventArgs e)
         {
             try
@@ -226,8 +224,6 @@ namespace AppSocket.view
             {
                 portaSerial.Close();
             }
-
-
         }
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -235,9 +231,11 @@ namespace AppSocket.view
 			if (cbxTagManual.Checked)
 			{
 				txtTag.ReadOnly = true;
+                btnTcu.Enabled = true;
 			}
 			else {
 				txtTag.ReadOnly = false;
+                btnTcu.Enabled = false;
 			}
 		}
 	}
