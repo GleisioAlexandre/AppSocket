@@ -52,9 +52,10 @@
             this.rbMaquina = new System.Windows.Forms.RadioButton();
             this.rbBombaMaquina = new System.Windows.Forms.RadioButton();
             this.cbxPortTcu = new System.Windows.Forms.ComboBox();
-            this.portaSerial = new System.IO.Ports.SerialPort(this.components);
             this.btnTcu = new System.Windows.Forms.Button();
             this.cbxTagManual = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.portaSerial = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // btnGravarRfid
@@ -297,15 +298,13 @@
             // 
             // cbxPortTcu
             // 
+            this.cbxPortTcu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPortTcu.FormattingEnabled = true;
             this.cbxPortTcu.Location = new System.Drawing.Point(298, 87);
             this.cbxPortTcu.Name = "cbxPortTcu";
             this.cbxPortTcu.Size = new System.Drawing.Size(117, 21);
             this.cbxPortTcu.TabIndex = 23;
-            // 
-            // portaSerial
-            // 
-            this.portaSerial.PortName = "COM6";
+            this.cbxPortTcu.SelectedIndexChanged += new System.EventHandler(this.cbxPortTcu_SelectedIndexChanged);
             // 
             // btnTcu
             // 
@@ -328,13 +327,28 @@
             this.cbxTagManual.TabIndex = 25;
             this.cbxTagManual.Text = "Tag Manual";
             this.cbxTagManual.UseVisualStyleBackColor = true;
-            this.cbxTagManual.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbxTagManual.CheckedChanged += new System.EventHandler(this.cbxTagManual_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(332, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // portaSerial
+            // 
+            this.portaSerial.PortName = "COM3";
             // 
             // FrmIdentifid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 495);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbxTagManual);
             this.Controls.Add(this.btnTcu);
             this.Controls.Add(this.cbxPortTcu);
@@ -395,8 +409,9 @@
         private System.Windows.Forms.RadioButton rbMaquina;
         private System.Windows.Forms.RadioButton rbBombaMaquina;
         private System.Windows.Forms.ComboBox cbxPortTcu;
-        private System.IO.Ports.SerialPort portaSerial;
         private System.Windows.Forms.Button btnTcu;
 		private System.Windows.Forms.CheckBox cbxTagManual;
-	}
+        private System.Windows.Forms.Button button1;
+        private System.IO.Ports.SerialPort portaSerial;
+    }
 }
