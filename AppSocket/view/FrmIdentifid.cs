@@ -17,7 +17,9 @@ namespace AppSocket.view
     {
         string host = ConfigurationManager.AppSettings["host"];
         string porta = ConfigurationManager.AppSettings["porta"];
-        public FrmIdentifid()
+        string tcu = ConfigurationManager.AppSettings["portaSerial"];
+
+              public FrmIdentifid()
         {
             InitializeComponent();
         }
@@ -189,14 +191,18 @@ namespace AppSocket.view
         }
         private void FrmIdentifid_Load(object sender, EventArgs e)
         {
+            
             horaAI.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaAF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaBI.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaBF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
-            lblHost.Text = "Host: " + host + " Porta: " + porta;
+            lblHost.Text = "Host: " + host + " Porta: " + porta + " TCU: " + tcu;
             cbxControle.SelectedIndex = 6;
             portasDisponiveis();
             txtTag.Focus();
+            
+           
+           
         }
         
         private void btnTcu_Click(object sender, EventArgs e)
@@ -209,10 +215,9 @@ namespace AppSocket.view
                  }
                  else
                  {
+                    portaSerial.PortName = tcu;
                      portaSerial.Open();
-                    portaSerial.WriteLine("(%R$9B)");
-                    //portaSerial.WriteLine("(%MA$D7)");
-                   
+                     portaSerial.WriteLine("(%R$9B)");
                      string Rfid = portaSerial.ReadExisting().ToString().Replace("(", "").Replace(")", "").Replace("#R", "").Substring(0, + 16);
                      txtTag.Text = Rfid;
                      portaSerial.Close();
@@ -240,22 +245,21 @@ namespace AppSocket.view
                 btnTcu.Enabled = false;
 			}
 		}
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            portaSerial.PortName = cbxPortTcu.SelectedItem.ToString();
-            portaSerial.Open();
-            if (portaSerial.IsOpen)
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["portaSerial"].Value = cbxPortTcu.SelectedItem.ToString();
+            config.Save(ConfigurationSaveMode.Modified);
+            
+            Console.WriteLine(tcu);
+            if (portaSerial.IsOpen == true)
             {
-                lblStatusPorta.Text = "Conectado";
+                lblStatusPorta.Text = "TCU Conectado";
             }
             else
             {
-                lblStatusPorta.Text = "Porta Fechada";
+                lblStatusPorta.Text = "TCU Desconectado";
             }
-
         }
-
-
-        
     }
 }

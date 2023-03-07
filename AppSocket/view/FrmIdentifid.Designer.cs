@@ -337,11 +337,11 @@
             this.button1.TabIndex = 26;
             this.button1.Text = "Conectar TCU";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // portaSerial
             // 
-            this.portaSerial.PortName = "COM6";
+            this.portaSerial.PortName = "COM0";
             // 
             // lblStatusPorta
             // 
