@@ -26,7 +26,7 @@ namespace AppSocket.view
 
             try
             {
-                if (txtTag.Equals(""))
+               if (txtTag.Equals(""))
                 {
                     MessageBox.Show("O campos da tag não pode ser vazio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -51,16 +51,16 @@ namespace AppSocket.view
         }
         private void btnGravarRfid_Click(object sender, EventArgs e)
         {
-
             GeradorDeCodigoIdentFid();
             enviaTagIdentifid();
         }
-        public string portasDisponiveis() {
-
+        public string portasDisponiveis()
+        {
             string[] portasDisponiveis = SerialPort.GetPortNames();
 
             cbxPortTcu.Items.AddRange(portasDisponiveis);
             return portasDisponiveis.ToString();
+            
         }
         public string controleTag(string tipo)
         {
@@ -197,31 +197,26 @@ namespace AppSocket.view
             cbxControle.SelectedIndex = 6;
             portasDisponiveis();
             txtTag.Focus();
-           
         }
         
         private void btnTcu_Click(object sender, EventArgs e)
         {
             try
             {
-
-                portaSerial.Open();
-                portaSerial.WriteLine("(%MA$D7)");
-                string Rfid = portaSerial.ReadExisting().Replace("(", "").Replace(")", "").Replace("#", "").Replace("R", "").Replace("$", "").Substring(0, Text.Length + 4);
-                txtTag.Text = Rfid;
-                portaSerial.Close();
-                /* if (txtTag.Equals("")) {
+               
+                 if (txtTag.Equals("")) {
                      MessageBox.Show("O campos da tag não pode ser vazio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                  }
                  else
                  {
-                     portaSerial.PortName = cbxPortTcu.SelectedItem.ToString();
                      portaSerial.Open();
-                     portaSerial.WriteLine("(%MA$D7)");
-                     string Rfid = portaSerial.ReadExisting().Replace("(", "").Replace(")", "").Replace("#", "").Replace("R", "").Replace("$", "").Substring(0, Text.Length + 4);
+                    portaSerial.WriteLine("(%R$9B)");
+                    //portaSerial.WriteLine("(%MA$D7)");
+                   
+                     string Rfid = portaSerial.ReadExisting().ToString().Replace("(", "").Replace(")", "").Replace("#R", "").Substring(0, + 16);
                      txtTag.Text = Rfid;
                      portaSerial.Close();
-                 }*/
+                 }
             }
             catch 
             {
@@ -248,21 +243,19 @@ namespace AppSocket.view
         private void button1_Click(object sender, EventArgs e)
         {
             portaSerial.PortName = cbxPortTcu.SelectedItem.ToString();
-            Console.WriteLine(portaSerial.PortName);
             portaSerial.Open();
-            if (portaSerial.IsOpen == true)
+            if (portaSerial.IsOpen)
             {
-                Console.WriteLine("Conectado");
+                lblStatusPorta.Text = "Conectado";
             }
             else
             {
-                Console.WriteLine("Erro");
+                lblStatusPorta.Text = "Porta Fechada";
             }
+
         }
 
-        private void cbxPortTcu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            portaSerial.PortName = cbxPortTcu.SelectedItem.ToString();
-        }
+
+        
     }
 }
