@@ -61,7 +61,7 @@
             // 
             // btnGravarRfid
             // 
-            this.btnGravarRfid.Location = new System.Drawing.Point(154, 427);
+            this.btnGravarRfid.Location = new System.Drawing.Point(154, 471);
             this.btnGravarRfid.Name = "btnGravarRfid";
             this.btnGravarRfid.Size = new System.Drawing.Size(89, 32);
             this.btnGravarRfid.TabIndex = 0;
@@ -89,7 +89,7 @@
             "Gerente nível 1",
             "Gerente nível 2",
             "Controle total"});
-            this.cbxControle.Location = new System.Drawing.Point(298, 51);
+            this.cbxControle.Location = new System.Drawing.Point(298, 118);
             this.cbxControle.Name = "cbxControle";
             this.cbxControle.Size = new System.Drawing.Size(117, 21);
             this.cbxControle.TabIndex = 1;
@@ -97,7 +97,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 35);
+            this.label1.Location = new System.Drawing.Point(295, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 2;
@@ -107,7 +107,7 @@
             // 
             this.txtTag.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTag.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTag.Location = new System.Drawing.Point(12, 51);
+            this.txtTag.Location = new System.Drawing.Point(12, 116);
             this.txtTag.MaxLength = 16;
             this.txtTag.Name = "txtTag";
             this.txtTag.ReadOnly = true;
@@ -117,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 35);
+            this.label2.Location = new System.Drawing.Point(9, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 4;
@@ -126,7 +126,7 @@
             // cbxA
             // 
             this.cbxA.AutoSize = true;
-            this.cbxA.Location = new System.Drawing.Point(12, 136);
+            this.cbxA.Location = new System.Drawing.Point(12, 201);
             this.cbxA.Name = "cbxA";
             this.cbxA.Size = new System.Drawing.Size(64, 17);
             this.cbxA.TabIndex = 5;
@@ -136,7 +136,7 @@
             // cbxB
             // 
             this.cbxB.AutoSize = true;
-            this.cbxB.Location = new System.Drawing.Point(12, 178);
+            this.cbxB.Location = new System.Drawing.Point(12, 243);
             this.cbxB.Name = "cbxB";
             this.cbxB.Size = new System.Drawing.Size(64, 17);
             this.cbxB.TabIndex = 6;
@@ -147,7 +147,7 @@
             // 
             this.horaAI.CustomFormat = "HH:mm";
             this.horaAI.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.horaAI.Location = new System.Drawing.Point(82, 136);
+            this.horaAI.Location = new System.Drawing.Point(82, 201);
             this.horaAI.Name = "horaAI";
             this.horaAI.ShowUpDown = true;
             this.horaAI.Size = new System.Drawing.Size(64, 20);
@@ -157,7 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(79, 120);
+            this.label3.Location = new System.Drawing.Point(79, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 8;
@@ -166,7 +166,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(164, 120);
+            this.label4.Location = new System.Drawing.Point(164, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 10;
@@ -176,7 +176,7 @@
             // 
             this.horaAF.CustomFormat = "HH:mm";
             this.horaAF.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.horaAF.Location = new System.Drawing.Point(167, 136);
+            this.horaAF.Location = new System.Drawing.Point(167, 201);
             this.horaAF.Name = "horaAF";
             this.horaAF.ShowUpDown = true;
             this.horaAF.Size = new System.Drawing.Size(64, 20);
@@ -185,7 +185,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(164, 162);
+            this.label5.Location = new System.Drawing.Point(164, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 14;
@@ -195,7 +195,7 @@
             // 
             this.horaBF.CustomFormat = "HH:mm";
             this.horaBF.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.horaBF.Location = new System.Drawing.Point(167, 178);
+            this.horaBF.Location = new System.Drawing.Point(167, 243);
             this.horaBF.Name = "horaBF";
             this.horaBF.ShowUpDown = true;
             this.horaBF.Size = new System.Drawing.Size(64, 20);
@@ -204,7 +204,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(79, 160);
+            this.label6.Location = new System.Drawing.Point(79, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 12;
@@ -214,7 +214,7 @@
             // 
             this.horaBI.CustomFormat = "HH:mm";
             this.horaBI.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.horaBI.Location = new System.Drawing.Point(82, 178);
+            this.horaBI.Location = new System.Drawing.Point(82, 243);
             this.horaBI.Name = "horaBI";
             this.horaBI.ShowUpDown = true;
             this.horaBI.Size = new System.Drawing.Size(64, 20);
@@ -224,7 +224,7 @@
             // lblHost
             // 
             this.lblHost.AutoSize = true;
-            this.lblHost.Location = new System.Drawing.Point(9, 473);
+            this.lblHost.Location = new System.Drawing.Point(9, 517);
             this.lblHost.Name = "lblHost";
             this.lblHost.Size = new System.Drawing.Size(29, 13);
             this.lblHost.TabIndex = 15;
@@ -233,7 +233,7 @@
             // rbReservado
             // 
             this.rbReservado.AutoSize = true;
-            this.rbReservado.Location = new System.Drawing.Point(12, 250);
+            this.rbReservado.Location = new System.Drawing.Point(12, 315);
             this.rbReservado.Name = "rbReservado";
             this.rbReservado.Size = new System.Drawing.Size(77, 17);
             this.rbReservado.TabIndex = 16;
@@ -245,7 +245,7 @@
             // 
             this.rbBomba.AutoSize = true;
             this.rbBomba.Checked = true;
-            this.rbBomba.Location = new System.Drawing.Point(13, 273);
+            this.rbBomba.Location = new System.Drawing.Point(13, 338);
             this.rbBomba.Name = "rbBomba";
             this.rbBomba.Size = new System.Drawing.Size(90, 17);
             this.rbBomba.TabIndex = 17;
@@ -256,7 +256,7 @@
             // rbTurno
             // 
             this.rbTurno.AutoSize = true;
-            this.rbTurno.Location = new System.Drawing.Point(13, 296);
+            this.rbTurno.Location = new System.Drawing.Point(13, 361);
             this.rbTurno.Name = "rbTurno";
             this.rbTurno.Size = new System.Drawing.Size(94, 17);
             this.rbTurno.TabIndex = 18;
@@ -267,7 +267,7 @@
             // rbBombaTurno
             // 
             this.rbBombaTurno.AutoSize = true;
-            this.rbBombaTurno.Location = new System.Drawing.Point(13, 319);
+            this.rbBombaTurno.Location = new System.Drawing.Point(13, 384);
             this.rbBombaTurno.Name = "rbBombaTurno";
             this.rbBombaTurno.Size = new System.Drawing.Size(164, 17);
             this.rbBombaTurno.TabIndex = 19;
@@ -278,7 +278,7 @@
             // rbMaquina
             // 
             this.rbMaquina.AutoSize = true;
-            this.rbMaquina.Location = new System.Drawing.Point(13, 342);
+            this.rbMaquina.Location = new System.Drawing.Point(13, 407);
             this.rbMaquina.Name = "rbMaquina";
             this.rbMaquina.Size = new System.Drawing.Size(138, 17);
             this.rbMaquina.TabIndex = 20;
@@ -289,7 +289,7 @@
             // rbBombaMaquina
             // 
             this.rbBombaMaquina.AutoSize = true;
-            this.rbBombaMaquina.Location = new System.Drawing.Point(12, 365);
+            this.rbBombaMaquina.Location = new System.Drawing.Point(12, 430);
             this.rbBombaMaquina.Name = "rbBombaMaquina";
             this.rbBombaMaquina.Size = new System.Drawing.Size(214, 17);
             this.rbBombaMaquina.TabIndex = 21;
@@ -301,14 +301,14 @@
             // 
             this.cbxPortTcu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPortTcu.FormattingEnabled = true;
-            this.cbxPortTcu.Location = new System.Drawing.Point(298, 87);
+            this.cbxPortTcu.Location = new System.Drawing.Point(240, 24);
             this.cbxPortTcu.Name = "cbxPortTcu";
-            this.cbxPortTcu.Size = new System.Drawing.Size(117, 21);
+            this.cbxPortTcu.Size = new System.Drawing.Size(78, 21);
             this.cbxPortTcu.TabIndex = 23;
             // 
             // btnTcu
             // 
-            this.btnTcu.Location = new System.Drawing.Point(193, 51);
+            this.btnTcu.Location = new System.Drawing.Point(193, 116);
             this.btnTcu.Name = "btnTcu";
             this.btnTcu.Size = new System.Drawing.Size(82, 23);
             this.btnTcu.TabIndex = 24;
@@ -321,7 +321,7 @@
             this.cbxTagManual.AutoSize = true;
             this.cbxTagManual.Checked = true;
             this.cbxTagManual.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxTagManual.Location = new System.Drawing.Point(12, 91);
+            this.cbxTagManual.Location = new System.Drawing.Point(12, 156);
             this.cbxTagManual.Name = "cbxTagManual";
             this.cbxTagManual.Size = new System.Drawing.Size(83, 17);
             this.cbxTagManual.TabIndex = 25;
@@ -331,7 +331,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(325, 133);
+            this.button1.Location = new System.Drawing.Point(335, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 23);
             this.button1.TabIndex = 26;
@@ -346,17 +346,17 @@
             // lblStatusPorta
             // 
             this.lblStatusPorta.AutoSize = true;
-            this.lblStatusPorta.Location = new System.Drawing.Point(295, 111);
+            this.lblStatusPorta.Location = new System.Drawing.Point(243, 48);
             this.lblStatusPorta.Name = "lblStatusPorta";
-            this.lblStatusPorta.Size = new System.Drawing.Size(32, 13);
+            this.lblStatusPorta.Size = new System.Drawing.Size(77, 13);
             this.lblStatusPorta.TabIndex = 27;
-            this.lblStatusPorta.Text = "Porta";
+            this.lblStatusPorta.Text = "Desconectado";
             // 
             // FrmIdentifid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 495);
+            this.ClientSize = new System.Drawing.Size(427, 535);
             this.Controls.Add(this.lblStatusPorta);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbxTagManual);

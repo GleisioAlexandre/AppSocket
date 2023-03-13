@@ -17,7 +17,7 @@ namespace AppSocket.view
     {
         string host = ConfigurationManager.AppSettings["host"];
         string porta = ConfigurationManager.AppSettings["porta"];
-        string tcu = ConfigurationManager.AppSettings["portaSerial"];
+        //string tcu = ConfigurationManager.AppSettings["portaSerial"];
 
               public FrmIdentifid()
         {
@@ -196,7 +196,7 @@ namespace AppSocket.view
             horaAF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaBI.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaBF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
-            lblHost.Text = "Host: " + host + " Porta: " + porta + " TCU: " + tcu;
+            //lblHost.Text = "Host: " + host + " Porta: " + porta + " TCU: " + cbxPortTcu.SelectedItem.ToString(); ;
             cbxControle.SelectedIndex = 6;
             portasDisponiveis();
             txtTag.Focus();
@@ -215,7 +215,6 @@ namespace AppSocket.view
                  }
                  else
                  {
-                    portaSerial.PortName = tcu;
                      portaSerial.Open();
                      portaSerial.WriteLine("(%R$9B)");
                      string Rfid = portaSerial.ReadExisting().ToString().Replace("(", "").Replace(")", "").Replace("#R", "").Substring(0, + 16);
@@ -247,14 +246,14 @@ namespace AppSocket.view
 		}
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            config.AppSettings.Settings["portaSerial"].Value = cbxPortTcu.SelectedItem.ToString();
-            config.Save(ConfigurationSaveMode.Modified);
-            
-            Console.WriteLine(tcu);
+        
+            portaSerial.PortName = cbxPortTcu.SelectedItem.ToString();
+
+            portaSerial.Open();
             if (portaSerial.IsOpen == true)
             {
                 lblStatusPorta.Text = "TCU Conectado";
+                portaSerial.Close();
             }
             else
             {
