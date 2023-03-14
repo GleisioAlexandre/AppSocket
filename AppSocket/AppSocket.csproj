@@ -79,6 +79,12 @@
     <Compile Include="controller\ComunicacaoSocket.cs" />
     <Compile Include="model\ClassChecksum.cs" />
     <Compile Include="model\ClassSocket.cs" />
+    <Compile Include="view\FrmAbastecimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmAbastecimentos.Designer.cs">
+      <DependentUpon>FrmAbastecimentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="view\FrmAbastecimentos.resx">
+      <DependentUpon>FrmAbastecimentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FrmConfig.resx">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>

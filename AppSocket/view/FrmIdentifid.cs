@@ -17,8 +17,6 @@ namespace AppSocket.view
     {
         string host = ConfigurationManager.AppSettings["host"];
         string porta = ConfigurationManager.AppSettings["porta"];
-        //string tcu = ConfigurationManager.AppSettings["portaSerial"];
-
               public FrmIdentifid()
         {
             InitializeComponent();
