@@ -384,6 +384,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxControle);
             this.Controls.Add(this.btnGravarRfid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmIdentifid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

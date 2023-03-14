@@ -196,7 +196,7 @@ namespace AppSocket.view
             horaAF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaBI.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
             horaBF.Value = DateTime.Now.Date.Add(TimeSpan.Zero);
-            //lblHost.Text = "Host: " + host + " Porta: " + porta + " TCU: " + cbxPortTcu.SelectedItem.ToString(); ;
+            lblHost.Text = "Host: " + host + " Porta: " + porta;
             cbxControle.SelectedIndex = 6;
             portasDisponiveis();
             txtTag.Focus();
