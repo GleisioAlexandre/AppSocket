@@ -23,28 +23,28 @@ namespace AppSocket.view
 
         private void btnLerAbastecimento_Click(object sender, EventArgs e)
         {
-            ComunicacaoSocket skt = new ComunicacaoSocket();
             string datain = "(&A)";
-            string pula = "(&I)";
+           string retorno;
+            ComunicacaoSocket skt = new ComunicacaoSocket();
             
-            
+
+            retorno = skt.retorno();
+            try
+            {
                 skt.Comunicacao(host, int.Parse(porta), datain);
-            txtAbastecimentos.AppendText(skt.retorno());
-            skt.Comunicacao(host, int.Parse(porta), pula);
+                retorno = skt.retorno();
+                txtAbastecimentos.AppendText(retorno + "\r\n");
+                            
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+            }
+            catch (Exception ex)
+            {
+                btnLerAbastecimento.Focus();
+                MessageBox.Show("Erro: " + ex, "Erro", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+                       
         }
     }
 }

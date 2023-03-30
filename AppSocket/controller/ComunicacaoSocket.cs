@@ -25,10 +25,16 @@ namespace AppSocket.controller
             byte[] message = System.Text.Encoding.ASCII.GetBytes(dataIn);
             stream.Write(message, 0, message.Length);
             //Recebe a resposta do servidor
-            byte[] resposta = new byte[256];
+            byte[] resposta = new byte[1024];
             int byteRead = stream.Read(resposta, 0, resposta.Length);
             string menssagemResposta = System.Text.Encoding.ASCII.GetString(resposta, 0, byteRead);
             sk.Retorno = menssagemResposta.ToString();
+            if (sk.Retorno.Equals("0") == false) {
+                String pula = "(&I)";
+                byte[] pulaAbast = System.Text.Encoding.ASCII.GetBytes(pula);
+               
+                stream.Write(pulaAbast, 0, pulaAbast.Length);
+            }
             stream.Close();
             client.Close();
             Console.ReadLine();
